@@ -15,6 +15,12 @@ namespace StreamWriter
                     }
                 }
             }
+            
+            // add text
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Projects\Read3.txt", true))
+            {
+                file.WriteLine("Additional Contain");
+            }
         }
     }
 }
