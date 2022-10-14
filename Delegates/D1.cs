@@ -17,7 +17,18 @@ namespace ApplicationBase
 
             List<Person> people = new List<Person>() { p1, p2, p3, p4 };
             
-            DisplayPeople("Kid", people, IsAdult);
+            DisplayPeople("Kid", people, IsMinor);
+            DisplayPeople("Adult", people, IsAdult);
+            DisplayPeople("Senior", people, IsSenior);
+
+            FilterDelegate filter = delegate(Person p)
+            {
+                return p.Age >= 20 && p.Age <= 30;
+            };
+            
+            DisplayPeople("Adult", people, filter);
+            
+            DisplayPeople("All", people, delegate(Person p) { return true;});
         }
 
         static void DisplayPeople(string title, List<Person> people, FilterDelegate filter)
