@@ -29,6 +29,21 @@ namespace ApplicationBase
             DisplayPeople("Adult", people, filter);
             
             DisplayPeople("All", people, delegate(Person p) { return true;});
+
+            string searchKeyWord = "A";
+            DisplayPeople("Age more than 20 and Keyword " + searchKeyWord, people, p =>
+            {
+                if (p.Name.Contains(searchKeyWord) && p.Age > 20)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            });
+            
+            DisplayPeople("Is 19", people, p=> p.Age == 19);
         }
 
         static void DisplayPeople(string title, List<Person> people, FilterDelegate filter)
