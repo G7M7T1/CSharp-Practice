@@ -9,7 +9,9 @@ namespace GCE
             MarksPrinter<GraduateStudent> mp = new MarksPrinter<GraduateStudent>();
             mp.stu = new GraduateStudent() { Marks = 80 };
             mp.PrintMarks();
-            
+            mp.stu.Marks = 100;
+            mp.PrintMarks();
+
             Console.ReadKey();
         }
     }
