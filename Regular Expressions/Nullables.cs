@@ -9,7 +9,7 @@ namespace Nullables
             
             double num3;
 
-            if (num1 == null) 
+            if (num1 == null)
             {
                 num3 = 0.0;
             }
