@@ -1,0 +1,24 @@
+@page
+@model List<ASPAPP.Models.HotelBookingModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>List</title>
+</head>
+<body>
+<div>
+    <ul>
+        @foreach (var book in Model)
+        {
+            <li>@book.Id | @book.GuestName | @book.DateStart | @book.DateEnd</li>
+        }
+    </ul>
+</div>
+</body>
+</html>
